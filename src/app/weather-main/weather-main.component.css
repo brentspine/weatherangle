@@ -1,0 +1,82 @@
+.weather-main {
+  color: white;
+  height: calc(100vh - 138px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.weather-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 20px;
+  flex: 1;
+}
+.weather-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vw 4vw;
+  background-color: rgba(217, 217, 217, 0.2);
+  min-height: 430px;
+  border-radius: 10px;
+}
+.weather-overview .overview-temperature {
+  font-size: 6rem;
+  font-weight: bolder;
+  color: var(--color-accent);
+}
+.weather-overview .overview-location-wrap {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-overview .overview-location {
+  cursor: pointer;
+}
+.weather-overview .overview-station {
+  color: #C3C3C3;
+  margin: 15px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.weather-overview .overview-location input {
+  all: unset;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.weather-overview .overview-station div {
+  margin: 0 0.5vw;
+}
+.small-forecast-container {
+  display: flex;
+  justify-content: space-around;
+}
+.weather-details__today,
+.weather-details__week
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.weather-details__today {
+  margin: 2vw 2vw 1vw 2vw;
+}
+.weather-details__week {
+  margin: 1vw 2vw 3vw 2vw;
+}
+.h2 {
+  margin: unset;
+}
+#geolocation-notice {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,26 @@
+<div class="small-forecast-box">
+  <div class="small-forecast-box__time">{{ forecast.time | date: dateFormat }}</div>
+  <div class="small-forecast-box__icon">
+    <img src="{{ '/assets/weathercode_'+forecast.weather_code+'.png' }}" alt="weather icon" />
+  </div>
+  <div class="full-width small-forecast-box__temperature" *ngIf="forecast.temperature_2m">
+    <img src="/assets/thermometer_lightred.svg" height="18">
+    <span>{{ forecast.temperature_2m }}°C</span>
+  </div>
+  <div class="full-width small-forecast-box__rain" *ngIf="forecast.relative_humidity_2m">
+    <img src="/assets/droplet_lightblue.svg" height="18">
+    <span>{{ forecast.relative_humidity_2m }} %</span>
+  </div>
+  <div class="small-forecast-box__wind" *ngIf="forecast.wind_speed_10m">
+    {{ forecast.wind_speed_10m }} m/s
+  </div>
+  <div class="small-forecast-box__temperature_daily" *ngIf="forecast.temperature_2m_max">
+    <span>{{ forecast.temperature_2m_min }}°C - {{ forecast.temperature_2m_max }}°C</span>
+  </div>
+  <div class="small-forecast-box__rain_sum" *ngIf="forecast.rain_sum != null">
+    <span>{{ forecast.rain_sum }} mm</span>
+  </div>
+  <div class="small-forecast-box__wind_max" *ngIf="forecast.wind_speed_10m_max">
+    <span>{{ forecast.wind_speed_10m_max }} m/s</span>
+  </div>
+</div>

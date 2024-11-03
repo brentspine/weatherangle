@@ -1,0 +1,47 @@
+<div class="weather-main">
+  <div class="weather-overview">
+    <div class="overview-temperature">{{ temperature }}°C</div>
+    <div class="overview-location-wrap">
+      <!-- <span>In </span> -->
+      <span class="overview-location">
+        <form (submit)="onSearch()">
+          <input value="{{ nominatim.display_name ? nominatim.display_name : placeName}}" (keyup)="onLocationTyping($event)" id="location-search" onfocus="this.select()">
+        </form>
+      </span>
+      <div class="search-suggestions" *ngIf="searchSuggestions.length > 0">
+        <div *ngFor="let suggestion of searchSuggestions" (click)="onSearchSuggestionClick(suggestion)">
+          {{ suggestion.name }}
+        </div>
+      </div>
+    </div>
+    <div class="overview-station">
+      <div>
+        <span class="overview-station-title">Lat: </span>
+        <span class="station-lat">{{ lat }}</span>
+      </div>
+      <div>
+        <span class="overview-station-title">Lon: </span>
+        <span class="station-lon">{{ lon }}</span>
+      </div>
+    </div>
+    <div class="geolocation-notice hidden" id="geolocation-notice">⚠ Konnte nicht auf deinen Standort zugreifen</div>
+  </div>
+  <div class="weather-details">
+    <div class="weather-details__today">
+      <h2>Heute</h2>
+      <div class="small-forecast-container">
+        <app-weather-main-small-forecast
+          *ngFor="let forecast of hourlyForecast | slice:currentHour:currentHour+12;" [forecast]="forecast" dateFormat="hh:mm a"
+        ></app-weather-main-small-forecast>
+      </div>
+    </div>
+    <div class="weather-details__week">
+      <h2>Die nächsten Tage</h2>
+      <div class="small-forecast-container">
+        <app-weather-main-small-forecast
+          *ngFor="let forecast of dailyForecast | slice:1:6;" [forecast]="forecast" dateFormat="dd.MM.yyyy"
+        ></app-weather-main-small-forecast>
+      </div>
+    </div>
+  </div>
+</div>

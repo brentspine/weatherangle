@@ -1,0 +1,19 @@
+
+
+.header {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between;*/
+}
+.header a {
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0.8;
+  color: white;
+  padding: 0 1.5vw;
+}
+.header a:hover {
+  opacity: 0.9;
+  transition: 0.3s;
+}

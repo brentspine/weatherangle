@@ -1,0 +1,23 @@
+.small-forecast-box {
+  margin: 0.3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.full-width {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.small-forecast-box__temperature_daily {
+  margin: 0 0.2vw;
+}
+.small-forecast-box__time {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+.small-forecast-box__temperature {
+
+}

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", serif;
+}
+.nolink {
+  text-decoration: none;
+  color: white;
+}
+.flex-fill {
+  flex: 1;
+}
+:root {
+  --color-accent: #DE0130;
+}
+.hidden {
+  display: none!important;
+}
